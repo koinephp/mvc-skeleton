@@ -1,0 +1,19 @@
+{
+    "name": "koine/mvc-skeleton",
+    "description": "Skeleton for mvc application using the koine/mvc framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcelo Jacobus",
+            "email": "marcelo.jacobus@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=5.3.3",
+        "koine/mvc" : "0.9.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "satooshi/php-coveralls": "dev-master"
+    }
+}
