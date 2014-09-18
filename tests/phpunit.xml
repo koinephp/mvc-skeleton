@@ -6,9 +6,16 @@
 >
   <testsuites>
     <testsuite name="MyApp">
-      <directory>.</directory>
+      <directory>./</directory>
     </testsuite>
   </testsuites>
+
+  <filter>
+    <whitelist>
+      <directory suffix=".php">../app/</directory>
+    </whitelist>
+  </filter>
+
   <logging>
     <log type="coverage-clover" target="../coverage/coverage.xml"/>
     <log type="coverage-html" target="../coverage" charset="UTF-8" 

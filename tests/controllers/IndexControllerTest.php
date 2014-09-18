@@ -21,6 +21,9 @@ class IndexControllerTest extends ControllerTestCase
      */
     public function indexRespondsWithSucccess()
     {
+        // execute action
+        $this->get('indexAction');
+
         // response status code should eq 200
         $this->assertResponseOk();
     }
@@ -31,6 +34,10 @@ class IndexControllerTest extends ControllerTestCase
     public function indexRespondsSetsTheCorrectContentToTheResponse()
     {
         $this->markTestIncomplete();
+
+        // execute action
+        $this->get('indexAction');
+
         // response status code should eq 200
         $this->assertResponseContains('Hello World!');
     }
