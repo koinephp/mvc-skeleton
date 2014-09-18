@@ -1,29 +1,42 @@
 <?php
-session_start();
+/**
+ *------------------------------------------------------------------------------
+ * Configuration
+ *------------------------------------------------------------------------------
+ */
 
-$autoloader = require '../vendor/autoload.php';
+// Do not forget to update your composer.json accordingly
 $appNamespace = 'MyApp';
 
-$controllersPath = realpath(__DIR__ . '/../app/controllers');
+// The function to resolve the controller class
+$resolveControllerClass = function ($params) use ($appNamespace) {
+    $controller = $params->fetch('controller', 'index');
 
-$autoloader->addPsr4("$appNamespace\\Controllers\\", $controllersPath);
+    return implode('\\', array(
+        $appNamespace,
+        'Controllers',
+        ucfirst($controller) . 'Controller'
+    ));
+};
+
+// The function to resolve the action to be called on the controller
+$resolveControllerAction = function ($params) {
+    return $params->fetch('action', 'index') . 'Action';
+};
+
+/**
+ *------------------------------------------------------------------------------
+ * Bootstrap
+ *------------------------------------------------------------------------------
+ */
+session_start();
+$autoloader = require '../vendor/autoload.php';
 
 // set request
 $env     = new \Koine\Http\Environment($_SERVER);
 $cookies = new \Koine\Http\Cookies($_COOKIE);
 $session = new \Koine\Http\Session($_SESSION);
 $params  = new \Koine\Http\Params($_REQUEST);
-
-
-// Which controller?
-$controller = $params->fetch('controller', 'index');
-        $action     = $params->fetch('action', 'index') . 'Action';
-
-$controllerClass = implode('\\', array(
-    $appNamespace,
-    'Controllers',
-    ucfirst($controller) . 'Controller'
-));
 
 $request = new \Koine\Http\Request(array(
     'environment' => $env,
@@ -45,9 +58,9 @@ $dependencyContainer = \Nurse\Di::getInstance()->getContainer();
 // set front controller
 $frontController = new \Koine\Mvc\FrontController();
 $frontController->setRequest($request)
-    ->setControllerClass($controllerClass)
+    ->setControllerClass($resolveControllerClass($params))
+    ->setAction($resolveControllerAction($params))
     ->setDependencyContainer($dependencyContainer)
-    ->setAction($action)
     ->setView($view);
 
 $response = $frontController->execute();
