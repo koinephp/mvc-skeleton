@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "774cb42a53b475d68928f40379c753ca",
+    "hash": "e911b61c9c3edf77a709f6cfefef809a",
     "packages": [
         {
             "name": "koine/core",
@@ -90,16 +90,16 @@
         },
         {
             "name": "koine/mvc",
-            "version": "0.9.4",
+            "version": "0.9.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koinephp/Mvc.git",
-                "reference": "e50a01555795a2ab3be774116772eb076ba61e54"
+                "reference": "2bb53b773b1597dd4a1918a7775a0893512ff0bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koinephp/Mvc/zipball/e50a01555795a2ab3be774116772eb076ba61e54",
-                "reference": "e50a01555795a2ab3be774116772eb076ba61e54",
+                "url": "https://api.github.com/repos/koinephp/Mvc/zipball/2bb53b773b1597dd4a1918a7775a0893512ff0bb",
+                "reference": "2bb53b773b1597dd4a1918a7775a0893512ff0bb",
                 "shasum": ""
             },
             "require": {
@@ -129,7 +129,7 @@
                 }
             ],
             "description": "Another MVC framework",
-            "time": "2014-09-09 20:45:55"
+            "time": "2014-09-19 19:03:03"
         },
         {
             "name": "koine/view",

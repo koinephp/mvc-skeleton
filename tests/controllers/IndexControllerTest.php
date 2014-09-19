@@ -33,8 +33,6 @@ class IndexControllerTest extends ControllerTestCase
      */
     public function indexRespondsSetsTheCorrectContentToTheResponse()
     {
-        $this->markTestIncomplete();
-
         // execute action
         $this->get('indexAction');
 
