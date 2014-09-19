@@ -21,9 +21,15 @@ Package information:
 ### Installing
 
 #### Via Composer
-Append the lib to your requirements key in your composer.json.
+Run the following command
 
-    php composer.phar create-project koinephp/mvc-skeleton
+    composer create-project koinephp/mvc-skeleton --stability=dev
+
+### Via Git
+
+    git clone https://github.com/koinephp/mvc-skeleton.git myapp
+    cd myapp 
+    composer install
 
 ### Files
 - Controllers are found in ```app/controllers```
