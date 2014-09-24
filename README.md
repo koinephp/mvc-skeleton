@@ -16,6 +16,7 @@ Package information:
 [![Total Downloads](https://poser.pugx.org/koine/mvc-skeleton/downloads.svg)](https://packagist.org/packages/koine/mvc-skeleton)
 [![Latest Unstable Version](https://poser.pugx.org/koine/mvc-skeleton/v/unstable.svg)](https://packagist.org/packages/koine/mvc-skeleton)
 [![License](https://poser.pugx.org/koine/mvc-skeleton/license.svg)](https://packagist.org/packages/koine/mvc-skeleton)
+[![Dependency Status](https://gemnasium.com/koinephp/mvc-skeleton.png)](https://gemnasium.com/koinephp/mvc-skeleton)
 
 
 ### Installing
